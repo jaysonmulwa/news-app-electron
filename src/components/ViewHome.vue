@@ -1,8 +1,6 @@
 <template>
     <div class="bg-gray-200 dark:bg-gray-800">
 
-
-
       <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
          <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
@@ -15,7 +13,7 @@
                </button>
                <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
                   <img class="h-8 mr-3" alt="FlowBite Logo" src="./../assets/logo.png" />
-                  <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">JKUAT TIMES</span>
+                  <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-lime-500">JKUAT TIMES</span>
                </a>
             </div>
             <div class="flex items-center">
@@ -100,7 +98,27 @@
                         </a>
                      </li>
                   </ul>
+
+                  <div class="fixed bottom-0">
+                     <div class="max-w-sm p-6 m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
+                        <a href="#">
+                           <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Advertise here</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Talk to us to use this space. Big brands advertise with us.</p>
+                        <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
+                           Read More
+                           <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+                        </a>
+                     </div>
+                  </div>
+                  
+
+
                </div>
+                  
+                  
+      
             </aside>
          </div>
 
@@ -133,8 +151,10 @@
                               </svg>Travels
                         </div>
                         <p class="text-gray-800 dark:text-gray-200 mb-6">
-                              <small>Published <u>13.01.2022</u> by
-                                 <a href="" class="text-gray-800 dark:text-gray-200">Anna Maria Doe</a></small>
+                              <small>
+                                 <a href="" class="text-gray-800 dark:text-gray-200">Anna Maria Doe</a>
+                                 13.01.2022
+                              </small>
                         </p>
                         <p class="text-gray-800 dark:text-gray-200">
                               Ut pretium ultricies dignissim. Sed sit amet mi eget urna
@@ -284,32 +304,92 @@
                   <span>
                      <!--Trending-->
                      <p>
-                        <span class="ml-2 text-sm font-medium dark:text-white">Recently Viewed</span>
+                        <span class="ml-2 text-sm font-medium dark:text-lime-500">Recently Viewed</span>
                      </p>
                   </span>
                   <ul class="space-y-2 font-medium text-xs">
                      <li class="py-2">
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2 pb-2 text-bold">
+                           Story 1
+                        </p>
+
                         <p class="text-gray-800 dark:text-gray-200 ml-2">
                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.
                         </p>
+                        
+                        <span class="ml-2 mt-4">
+                           <a href="#!" class="text-sky-500 dark:text-sky-500 ">Read more</a>
+                        </span>
+
                      </li>
 
-                     <li class="py-2">
-                        <p class="text-gray-800 dark:text-gray-200 ml-2">
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.
-                        </p>
-                     </li>
+                     <hr class="border-gray-200 dark:border-gray-700">
 
                      <li class="py-2">
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2 pb-2 text-bold">
+                           Story 2
+                        </p>
+
                         <p class="text-gray-800 dark:text-gray-200 ml-2">
                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.
                         </p>
+                        
+                        <span class="ml-2 mt-4">
+                           <a href="#!" class="text-sky-500 dark:text-sky-500 ">Read more</a>
+                        </span>
                      </li>
 
+                     <hr class="border-gray-200 dark:border-gray-700">
+
                      <li class="py-2">
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2 pb-2 text-bold">
+                           Story 3
+                        </p>
+
                         <p class="text-gray-800 dark:text-gray-200 ml-2">
                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.
                         </p>
+                        
+                        <span class="ml-2 mt-4">
+                           <a href="#!" class="text-sky-500 dark:text-sky-500 ">Read more</a>
+                        </span>
+                     </li>
+
+                     <hr class="border-gray-200 dark:border-gray-700">
+
+                     <li class="py-2">
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2 pb-2 text-bold">
+                           Story 4
+                        </p>
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.
+                        </p>
+                        
+                        <span class="ml-2 mt-4">
+                           <a href="#!" class="text-sky-500 dark:text-sky-500 ">Read more</a>
+                        </span>
+                     </li>
+
+                     <hr class="border-gray-200 dark:border-gray-700">
+
+                     <li class="py-2">
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2 pb-2 text-bold">
+                           Story 5
+                        </p>
+
+                        <p class="text-gray-800 dark:text-gray-200 ml-2">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.
+                        </p>
+                        
+                        <span class="ml-2 mt-4">
+                           <a href="#!" class="text-sky-500 dark:text-sky-500 ">Read more</a>
+                        </span>
                      </li>
 
                   </ul>
