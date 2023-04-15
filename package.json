@@ -13,6 +13,7 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@vue/composition-api": "^1.7.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },

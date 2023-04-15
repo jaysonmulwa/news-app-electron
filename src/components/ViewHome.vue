@@ -98,40 +98,25 @@
                         </a>
                      </li>
                   </ul>
-
-                  <div class="fixed bottom-0">
-                     <div class="max-w-sm p-6 m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd"></path><path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path></svg>
-                        <a href="#">
-                           <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Advertise here</h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Talk to us to use this space. Big brands advertise with us.</p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:underline">
-                           Read More
-                           <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
-                        </a>
-                     </div>
-                  </div>
-                  
-
-
                </div>
-                  
-                  
-      
             </aside>
          </div>
 
          <!-- Sidebar mid-->
          <div class="basis-full md:basis-4/5 overflow-auto">
 
-            <!-- Section: Design Block -->
-            <section class="text-gray-800 dark:text-gray-200 text-center md:text-left p-6">
+            <!-- Section: New Block -->
+            <section v-show="route=='home'" class="text-gray-800 dark:text-gray-200 p-6">
 
-                  <h2 class="text-3xl font-bold mb-12 text-center">Latest articles</h2>
+                 
+                  <div class="md:mt-8 mt-12 md:ml-10 bg-gray-800 h-16 text-justify md:text-start">
+                     <p class="p-3 md:ml-16 text-lime-500 font-semibold text-2xl align-middle">Latest news</p>
+                  </div>
 
-                  <div class="flex flex-wrap mb-6">
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
+                  <hr class="border-gray-200 dark:border-gray-700">
+
+                  <div v-for="item in stories" :key="item.id" class="flex flex-wrap pt-3 hover:bg-gray-700 text-center md:text-left">
+                     <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3  mb-6 md:mb-0 ml-auto">
                         <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
                               data-mdb-ripple="true" data-mdb-ripple-color="light">
                               <img src="https://mdbootstrap.com/img/new/standard/city/018.jpg" class="w-full" alt="Louvre" />
@@ -142,7 +127,7 @@
                         </div>
                      </div>
 
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
+                     <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3  mb-6 md:mb-0  mr-auto">
                         <h5 class="text-lg font-bold mb-3">Welcome to California</h5>
                         <div class="mb-3 text-red-600 font-medium text-sm flex items-center justify-center md:justify-start">
                               <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -154,7 +139,7 @@
                               <small>
                                  <a href="" class="text-gray-800 dark:text-gray-200">Anna Maria Doe</a>
                                  &#x2022;
-                                 13.01.2022
+                                 {{ item.date }}
                               </small>
                         </p>
                         <p class="text-gray-800 dark:text-gray-200 truncate text-ellipsis overflow-hidden">
@@ -163,142 +148,84 @@
                               elementum. Donec a ullamcorper diam.
                         </p>
                      </div>
+
+                     <hr class="border-gray-200 dark:border-gray-700">
+                     
                   </div>
 
-                  <div class="flex flex-wrap mb-6">
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
-                        <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
-                              data-mdb-ripple="true" data-mdb-ripple-color="light">
-                              <img src="https://mdbootstrap.com/img/new/standard/city/032.jpg" class="w-full" alt="Louvre" />
-                              <a href="#!">
-                                 <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                                    style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                              </a>
-                        </div>
-                     </div>
-
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
-                        <h5 class="text-lg font-bold mb-3">Exhibition in Paris</h5>
-                        <div class="mb-3 text-blue-600 font-medium text-sm flex items-center justify-center md:justify-start">
-                              <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                 <path fill="currentColor"
-                                    d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z" />
-                              </svg>Art
-                        </div>
-                        <p class="text-gray-800 dark:text-gray-200 mb-6">
-                              <small>
-                                 <a href="" class="text-gray-800 dark:text-gray-200">Anna Maria Doe</a>
-                                 &#x2022;
-                                 13.01.2022
-                              </small>
-                        </p>
-                        <p class="text-gray-800 dark:text-gray-200">
-                              Suspendisse in volutpat massa. Nulla facilisi. Sed aliquet diam
-                              orci, nec ornare metus semper sed. Integer volutpat ornare erat
-                              sit amet rutrum.
-                        </p>
-                     </div>
-                  </div>
-
-                  <div class="flex flex-wrap mb-6">
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
-                        <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
-                              data-mdb-ripple="true" data-mdb-ripple-color="light">
-                              <img src="https://mdbootstrap.com/img/new/standard/city/059.jpg" class="w-full" alt="Louvre" />
-                              <a href="#!">
-                                 <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                                    style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                              </a>
-                        </div>
-                     </div>
-
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
-                        <h5 class="text-lg font-bold mb-3">Stock market boom</h5>
-                        <div class="mb-3 text-yellow-500 font-medium text-sm flex items-center justify-center md:justify-start">
-                              <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                 <path fill="currentColor"
-                                    d="M608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zM48 400v-64c35.35 0 64 28.65 64 64H48zm0-224v-64h64c0 35.35-28.65 64-64 64zm272 176c-44.19 0-80-42.99-80-96 0-53.02 35.82-96 80-96s80 42.98 80 96c0 53.03-35.83 96-80 96zm272 48h-64c0-35.35 28.65-64 64-64v64zm0-224c-35.35 0-64-28.65-64-64h64v64z" />
-                              </svg>Business
-                        </div>
-                        <p class="text-gray-800 dark:text-gray-200 mb-6">
-                              <small>Published <u>10.01.2022</u> by
-                                 <a href="" class="text-gray-800 dark:text-gray-200">Joe Svan</a></small>
-                        </p>
-                        <p class="text-gray-800 dark:text-gray-200">
-                              Curabitur tristique, mi a mollis sagittis, metus felis mattis
-                              arcu, non vehicula nisl dui quis diam. Mauris ut risus eget
-                              massa volutpat feugiat. Donec.
-                        </p>
-                     </div>
-                  </div>
-
-                  <div class="flex flex-wrap mb-6">
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
-                        <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
-                              data-mdb-ripple="true" data-mdb-ripple-color="light">
-                              <img src="https://mdbootstrap.com/img/new/standard/city/059.jpg" class="w-full" alt="Louvre" />
-                              <a href="#!">
-                                 <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                                    style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                              </a>
-                        </div>
-                     </div>
-
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
-                        <h5 class="text-lg font-bold mb-3">Stock market boom</h5>
-                        <div class="mb-3 text-yellow-500 font-medium text-sm flex items-center justify-center md:justify-start">
-                              <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                 <path fill="currentColor"
-                                    d="M608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zM48 400v-64c35.35 0 64 28.65 64 64H48zm0-224v-64h64c0 35.35-28.65 64-64 64zm272 176c-44.19 0-80-42.99-80-96 0-53.02 35.82-96 80-96s80 42.98 80 96c0 53.03-35.83 96-80 96zm272 48h-64c0-35.35 28.65-64 64-64v64zm0-224c-35.35 0-64-28.65-64-64h64v64z" />
-                              </svg>Business
-                        </div>
-                        <p class="text-gray-800 dark:text-gray-200 mb-6">
-                              <small>Published <u>10.01.2022</u> by
-                                 <a href="" class="text-gray-800 dark:text-gray-200">Joe Svan</a></small>
-                        </p>
-                        <p class="text-gray-800 dark:text-gray-200">
-                              Curabitur tristique, mi a mollis sagittis, metus felis mattis
-                              arcu, non vehicula nisl dui quis diam. Mauris ut risus eget
-                              massa volutpat feugiat. Donec.
-                        </p>
-                     </div>
-                  </div>
-
-                  <div class="flex flex-wrap mb-6">
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3 mb-6 md:mb-0 ml-auto">
-                        <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
-                              data-mdb-ripple="true" data-mdb-ripple-color="light">
-                              <img src="https://mdbootstrap.com/img/new/standard/city/059.jpg" class="w-full" alt="Louvre" />
-                              <a href="#!">
-                                 <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
-                                    style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                              </a>
-                        </div>
-                     </div>
-
-                     <div class="grow-0 shrink-0 basis-auto w-full md:w-9/12 xl:w-7/12 px-3 mb-6 md:mb-0 mr-auto">
-                        <h5 class="text-lg font-bold mb-3">Stock market boom</h5>
-                        <div class="mb-3 text-yellow-500 font-medium text-sm flex items-center justify-center md:justify-start">
-                              <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                                 <path fill="currentColor"
-                                    d="M608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zM48 400v-64c35.35 0 64 28.65 64 64H48zm0-224v-64h64c0 35.35-28.65 64-64 64zm272 176c-44.19 0-80-42.99-80-96 0-53.02 35.82-96 80-96s80 42.98 80 96c0 53.03-35.83 96-80 96zm272 48h-64c0-35.35 28.65-64 64-64v64zm0-224c-35.35 0-64-28.65-64-64h64v64z" />
-                              </svg>Business
-                        </div>
-                        <p class="text-gray-800 dark:text-gray-200 mb-6">
-                              <small>Published <u>10.01.2022</u> by
-                                 <a href="" class="text-gray-800 dark:text-gray-200">Joe Svan</a></small>
-                        </p>
-                        <p class="text-gray-800 dark:text-gray-200">
-                              Curabitur tristique, mi a mollis sagittis, metus felis mattis
-                              arcu, non vehicula nisl dui quis diam. Mauris ut risus eget
-                              massa volutpat feugiat. Donec.
-                        </p>
-                     </div>
-                  </div>
-
+                  
+                  
             </section>
-            <!-- Section: Design Block -->
-            
+            <!-- Section: News Block -->
+
+            <!--- Section: Story Block-->
+            <main v-show="route=='story'" class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
+                  <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+                     <article
+                        class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                        <header class="mb-4 lg:mb-6 not-format">
+                              <address class="flex items-center mb-6 not-italic">
+                                 <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                                    <img class="mr-4 w-16 h-16 rounded-full"
+                                          src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
+                                    <div>
+                                          <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Jese
+                                             Leos</a>
+                                          <p class="text-base font-light text-gray-500 dark:text-gray-400">Graphic Designer, educator
+                                             & CEO Flowbite</p>
+                                          <p class="text-base font-light text-gray-500 dark:text-gray-400"><time pubdate
+                                                datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
+                                    </div>
+                                 </div>
+                              </address>
+                              <h1
+                                 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                                 Best practices for successful prototypes</h1>
+                        </header>
+                        <p class="lead">Flowbite is an open-source library of UI components built with the utility-first
+                              classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
+                              datepickers.</p>
+                        <p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
+                              you can think things through before committing to an actual design project.</p>
+                        <p>But then I found a <a href="https://flowbite.com">component library based on Tailwind CSS called
+                                 Flowbite</a>. It comes with the most commonly used UI components, such as buttons, navigation
+                              bars, cards, form elements, and more which are conveniently built with the utility classes from
+                              Tailwind CSS.</p>
+                        <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="">
+                              <figcaption>Digital art by Anonymous</figcaption>
+                        </figure>
+                        <h2>Getting started with Flowbite</h2>
+                        <p>First of all you need to understand how Flowbite works. This library is not another framework.
+                              Rather, it is a set of components based on Tailwind CSS that you can just copy-paste from the
+                              documentation.</p>
+                        <p>It also includes a JavaScript file that enables interactive components, such as modals, dropdowns,
+                              and datepickers which you can optionally include into your project via CDN or NPM.</p>
+                        <p>You can check out the <a href="https://flowbite.com/docs/getting-started/quickstart/">quickstart
+                                 guide</a> to explore the elements by including the CDN files into your project. But if you want
+                              to build a project with Flowbite I recommend you to follow the build tools steps so that you can
+                              purge and minify the generated CSS.</p>
+                        <p>You'll also receive a lot of useful application UI, marketing UI, and e-commerce pages that can help
+                              you get started with your projects even faster. You can check out this <a
+                                 href="https://flowbite.com/docs/components/tables/">comparison table</a> to better understand
+                              the differences between the open-source and pro version of Flowbite.</p>
+                        <h2>When does design come in handy?</h2>
+                        <p>While it might seem like extra work at a first glance, here are some key moments in which prototyping
+                              will come in handy:</p>
+
+                        <h4>Old-Style serifs</h4>
+                        <ul>
+                              <li>Low contrast between thick and thin strokes</li>
+                              <li>Diagonal stress in the strokes</li>
+                              <li>Slanted serifs on lower-case ascenders</li>
+                        </ul><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png" alt="">
+
+                     </article>
+                  </div>
+            </main>
+            <!--- Section: Story Block-->
+
+
+
          </div>
 
          <!-- Sidebar right-->
@@ -404,5 +331,59 @@
 
     </div>
 </template>
+
+<script>
+export default {
+   data() {
+      return {
+         route: "home",
+         storySelected: null,
+         stories: [
+            {
+               id: 1,
+               title: "Story 1",
+               description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+               author: "Author 1",
+               date: "2021-01-01",
+               image: "https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png",
+               tags: ["tag1", "tag2", "tag3"],
+            },
+            {
+               id: 2,
+               title: "Story 2",
+               description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+               author: "Author 2",
+               date: "2021-01-01",
+               image: "https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png",
+               tags: ["tag1", "tag2", "tag3"],
+            },
+            {
+               id: 3,
+               title: "Story 3",
+               description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+               author: "Author 1",
+               date: "2021-01-01",
+               image: "https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png",
+               tags: ["tag1", "tag2", "tag3"],
+            },
+            {
+               id: 4,
+               title: "Story 4",
+               description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+               author: "Author 2",
+               date: "2021-01-01",
+               image: "https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png",
+               tags: ["tag1", "tag2", "tag3"],
+            }
+         ]
+      }
+   },
+   methods: {
+      storyClick(storyId) {
+         console.log(storyId);
+      },
+   }
+}
+</script>
 
 
