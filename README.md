@@ -1,4 +1,10 @@
-# vue3-electron
+# News Application
+Basic news desktop-based application using Electron and Vue.js.
+
+## Installation
+Desktop app: Check releases for windows installer.
+
+Web app: [https://news-app-electron.vercel.app/](https://news-app-electron.vercel.app/.
 
 ## Project setup
 ```
