@@ -426,6 +426,7 @@
                 </article>
             </div>
         </main>
+    </div>
 
         <!---<aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
             <div class="px-4 mx-auto max-w-screen-xl">

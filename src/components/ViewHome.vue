@@ -109,13 +109,12 @@
             <section v-show="route=='home'" class="text-gray-800 dark:text-gray-200 p-6">
 
                   <div class="md:mt-8 mt-12 md:ml-10 bg-gray-800 h-16 text-justify md:text-start">
-                     <p v-show="route=='home'" class="p-3 md:ml-16 text-red-500 font-semibold text-2xl align-middle">Latest news</p>
-                     <p v-show="route=='story'" class="p-3 md:ml-16 text-lime-500 font-semibold text-2xl align-middle">Back</p>
+                     <p class="p-3 md:ml-16 text-red-500 font-semibold text-2xl align-middle">Latest news</p>
                   </div>
 
                   <hr class="border-gray-200 dark:border-gray-700">
 
-                  <div v-for="item in stories" :key="item.id" class="flex flex-wrap pt-3 hover:bg-gray-700 text-center md:text-left">
+                  <div v-for="item in stories" :key="item.id" @click="storyClick(item.id)" class="flex flex-wrap pt-3 hover:bg-gray-700 text-center md:text-left cursor-pointer">
                      <div class="grow-0 shrink-0 basis-auto w-full md:w-3/12 px-3  mb-6 md:mb-0 ml-auto">
                         <div class="relative overflow-hidden bg-no-repeat bg-cover relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg mb-6"
                               data-mdb-ripple="true" data-mdb-ripple-color="light">
@@ -157,8 +156,18 @@
             <!-- Section: News Block -->
 
             <!--- Section: Story Block-->
-            <main v-show="route=='story'" class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
-                  <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+            <main v-show="route=='story'" class="pt-8 pb-16 lg:pt-14 lg:pb-24 bg-white dark:bg-gray-900">
+                  <div class="flex items-center md:ml-10 bg-gray-800 h-16 text-justify md:text-start cursor-pointer" @click="route='home'">
+                     <!--back svg icon-->
+                     <span class="md:ml-16 place-items-center">
+                        <svg class="w-6 h-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                     </span>
+                     <p class="p-3 text-red-500 font-semibold text-2xl align-middle">Back</p>
+                     
+                  </div>
+                  <div class="flex justify-between px-4 mx-auto max-w-screen-xl text-white pt-6">
                      <article
                         class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                         <header class="mb-4 lg:mb-6 not-format">
@@ -237,7 +246,7 @@
                      </p>
                   </span>
                   <ul class="space-y-2 font-medium text-xs">
-                     <li class="py-2">
+                     <li class="py-2 hover:bg-gray-700 cursor-pointer">
 
                         <p class="text-gray-800 dark:text-gray-200 ml-2 pb-2 text-bold">
                            Story 1
@@ -336,6 +345,7 @@ export default {
       return {
          route: "home",
          storySelected: null,
+         storySelectedId: null,
          stories: [
             {
                id: 1,
@@ -380,13 +390,40 @@ export default {
                tags: ["tag1", "tag2", "tag3"],
                category: "Lifestyle",
                fullStory: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
-            }
+            },
+            {
+               id: 5,
+               title: "Story 5",
+               description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+               author: "Author 1",
+               date: "2021-01-01",
+               image: "https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png",
+               tags: ["tag1", "tag2", "tag3"],
+               category: "Sports",
+               fullStory: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+            },
+            {
+               id: 6,
+               title: "Story 6",
+               description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+               author: "Author 2",
+               date: "2021-01-01",
+               image: "https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png",
+               tags: ["tag1", "tag2", "tag3"],
+               category: "Lifestyle",
+               fullStory: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati tempora corporis fugit quaerat odio reiciendis, mollitia esse, quam consequuntur possimus et, consectetur eum aliquam quo nisi. Fugit molestias architecto iste.",
+            },
          ]
       }
    },
    methods: {
       storyClick(storyId) {
-         console.log(storyId);
+         this.storySelected = this.stories.find(story => story.id === storyId);
+         this.storySelectedId = storyId;
+         this.route = "story";
+      },
+      backToHome() {
+         this.route = "home";
       },
    }
 }
