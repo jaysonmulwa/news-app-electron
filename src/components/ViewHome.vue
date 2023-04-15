@@ -153,10 +153,11 @@
                         <p class="text-gray-800 dark:text-gray-200 mb-6">
                               <small>
                                  <a href="" class="text-gray-800 dark:text-gray-200">Anna Maria Doe</a>
+                                 &#x2022;
                                  13.01.2022
                               </small>
                         </p>
-                        <p class="text-gray-800 dark:text-gray-200">
+                        <p class="text-gray-800 dark:text-gray-200 truncate text-ellipsis overflow-hidden">
                               Ut pretium ultricies dignissim. Sed sit amet mi eget urna
                               placerat vulputate. Ut vulputate est non quam dignissim
                               elementum. Donec a ullamcorper diam.
@@ -185,8 +186,11 @@
                               </svg>Art
                         </div>
                         <p class="text-gray-800 dark:text-gray-200 mb-6">
-                              <small>Published <u>12.01.2022</u> by
-                                 <a href="" class="text-gray-800 dark:text-gray-200">Halley Frank</a></small>
+                              <small>
+                                 <a href="" class="text-gray-800 dark:text-gray-200">Anna Maria Doe</a>
+                                 &#x2022;
+                                 13.01.2022
+                              </small>
                         </p>
                         <p class="text-gray-800 dark:text-gray-200">
                               Suspendisse in volutpat massa. Nulla facilisi. Sed aliquet diam
@@ -294,7 +298,7 @@
 
             </section>
             <!-- Section: Design Block -->
-
+            
          </div>
 
          <!-- Sidebar right-->
