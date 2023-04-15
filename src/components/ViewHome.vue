@@ -108,9 +108,9 @@
             <!-- Section: New Block -->
             <section v-show="route=='home'" class="text-gray-800 dark:text-gray-200 p-6">
 
-                 
                   <div class="md:mt-8 mt-12 md:ml-10 bg-gray-800 h-16 text-justify md:text-start">
-                     <p class="p-3 md:ml-16 text-lime-500 font-semibold text-2xl align-middle">Latest news</p>
+                     <p v-show="route=='home'" class="p-3 md:ml-16 text-red-500 font-semibold text-2xl align-middle">Latest news</p>
+                     <p v-show="route=='story'" class="p-3 md:ml-16 text-lime-500 font-semibold text-2xl align-middle">Back</p>
                   </div>
 
                   <hr class="border-gray-200 dark:border-gray-700">
@@ -150,7 +150,7 @@
                      </div>
 
                      <hr class="border-gray-200 dark:border-gray-700">
-                     
+
                   </div>
 
                   
