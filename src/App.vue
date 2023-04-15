@@ -19,7 +19,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 @import './assets/css/main.css';
-/* @import './assets/css/output.css'; */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Red+Hat+Display:400,700&display=swap');
 body {
   font-family: 'Raleway', sans-serif;
